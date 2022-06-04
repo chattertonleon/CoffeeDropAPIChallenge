@@ -1,64 +1,48 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Coffee Drop API
+This task requires you to build a JSON API. Other code (eg HTML, CSS and Javascript) will be reviewed but is entirely optional.
+ 
+## Brief
+A brand new start up, CoffeeDrop, have spotted a gap in the market to build an Android and IOS mobile app which shows their existing 16 national coffee shops, listing them as "locations" for recycling Nespresso coffee pods, for which the client will receive "cashback" - money for each pod.
+After initial meetings with CoffeeDrop, they have asked us to develop a small API which allows a customer using their mobile app to enter their postcode, and be informed of their nearest (as the crow flies) CoffeeDrop location and their opening times.
+The API must also allow CoffeeDrop to add a new recycling center, as well as calculate for the user of the app the total amount of "cashback" they will receive according to an algorithm listed below.
+ 
+### Endpoints Required (Hint: see postman file)
+ 1. Accepts a postcode, returns the address and opening times of the closest CoffeeDrop Location
+ 2. Accepts a postcode and set of opening and closing times, creates a new location which will then show up in the results of endpoint 1
+ 3. Accepts a quantity of each of the three sizes of used coffee pods as raw post data in the format 
+ 
+ {
+	"Ristretto":10,
+	"Espresso":100,
+  	"Lungo":30
+  }
+  
+  and returns the amount in pounds and pence that the client will receive in cashback according to the following rules:
+  
+  The first 50 capsules: [Ristretto = 2p, Espresso = 4p, Lungo = 6p]
+  
+  Capsules 50-500: [Ristetto = 3p, Espresso = 6p Lungo = 9p]
+  
+  Capsules 501+: [Ristretto = 5p, Espresso = 10p, Lungo = 15p]
+  
+  These requests should be saved in the database for...
+  
+  4. (Optional) Returns the last 5 calculations done by 3. as well as their result and data about the person sending the request (for the fake marketing team!)
+ 
+## What we are looking for
+ - Use of the Haversine Formula for calculating distances from latitude and longitude
+ - Use of the Postcodes.io (http://postcodes.io/) postcode lookup API
+ - Use of Laravel Eloquent Resources (https://laravel.com/docs/8.x/eloquent-resources)
+ - Use of MVC
+ - Use of Eloquent, Requests and Routes
+ - IMPORTANT: Database migrations and a seeder to seed the data in the location_data.csv file in this repo
+ - Clean, well-commented code 
+ - An updated Postman (https://www.getpostman.com/) file (included in this repository) which allows us to query the API
+ 
+## Optional
+ - A web or mobile app (?!) app to interact with the API
+ - Authentication (We use Laravel Passport at Image+)
+ 
+ 
+ ## Submission Instructions
+  - Please email your contact at Image+ with a link to a fork of this github repository containing your response
