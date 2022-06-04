@@ -13,6 +13,8 @@ return new class extends Migration
      *
      * @return void
      */
+
+    //creates schema for capsule types and initialises the prices with insert statements on migration
     public function up()
     {
         Schema::create('capsule_types', function (Blueprint $table) {

@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\Http\\Controllers",
+    "\\app\\Http\\Resources",
+    "\\app\\Models",
+    "\\database",
+    "\\database\\migrations",
+    "\\database\\seeders",
+    "\\routes"
+  ],
+  "SelectedNode": "\\database\\seeders\\DatabaseSeeder.php",
+  "PreviewInSolutionExplorer": false
+}

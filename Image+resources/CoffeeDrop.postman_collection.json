@@ -1,19 +1,37 @@
 {
 	"info": {
+		"_postman_id": "cf573a6e-2020-4870-9524-b9716b0f5746",
 		"name": "CoffeeDrop",
-		"_postman_id": "df15e329-169f-df36-623d-78cd2cdc1350",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21267857"
 	},
 	"item": [
 		{
 			"name": "GetNearestLocation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"postcode\": \"SO531FN\"\r\n}"
+				},
 				"url": {
-					"raw": ""
+					"raw": "http://127.0.0.1:8000/api/GetNearestLocation",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"GetNearestLocation"
+					]
 				},
 				"description": "Returns the address and opening times of the nearest CoffeeDrop location"
 			},
@@ -31,12 +49,23 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n      \"postcode\": \"CV313PP\",\n      \"opening_times\": {\"monday\" : \"09:00\", \"tuesday\" : \"09:00\", \"saturday\" : \"08:30\"},\n      \"closing_times\": {\"monday\" : \"19:00\", \"tuesday\" : \"19:00\", \"saturday\" : \"18:30\"}\n}\n\n"
+					"raw": "{\n      \"postcode\": \"SO531FN\",\n      \"opening_times\": {\"monday\" : \"18:00\", \"tuesday\" : \"14:00\", \"saturday\" : \"09:30\", \"sunday\" : \"12:00\"},\n      \"closing_times\": {\"monday\" : \"20:00\", \"tuesday\" : \"16:00\", \"saturday\" : \"11:00\", \"sunday\" : \"14:00\"}\n}\n"
 				},
 				"url": {
-					"raw": ""
-				},
-				"description": ""
+					"raw": "http://127.0.0.1:8000/api/CreateNewLocation",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"CreateNewLocation"
+					]
+				}
 			},
 			"response": []
 		},
@@ -52,12 +81,46 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n      \"Ristretto\": 10,\n      \"Espresso\": 100,\n      \"Lungo\":30\n}\n\n"
+					"raw": "{\n      \"Ristretto\": 104,\n      \"Espresso\": 55,\n      \"Lungo\":382\n}"
 				},
 				"url": {
-					"raw": ""
-				},
-				"description": ""
+					"raw": "http://127.0.0.1:8000/api/CalculateCashback",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"CalculateCashback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MostRecentCashback",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/MostRecentCashback",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"MostRecentCashback"
+					]
+				}
 			},
 			"response": []
 		}

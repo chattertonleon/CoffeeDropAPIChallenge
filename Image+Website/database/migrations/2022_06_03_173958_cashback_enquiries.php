@@ -12,6 +12,7 @@ return new class extends Migration
      *
      * @return void
      */
+     //creates schema for all enquiries for cashback amount
     public function up()
     {
         //

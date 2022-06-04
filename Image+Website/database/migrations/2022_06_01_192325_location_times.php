@@ -11,6 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
+     //creates schema for drop of locaitons and its opening time
     public function up()
     {
         //

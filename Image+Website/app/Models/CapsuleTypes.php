@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+//model of capsule types and there cost per capsule
 class CapsuleTypes extends Model
 {
     use HasFactory;
